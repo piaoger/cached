@@ -20,7 +20,7 @@ proc_macro = ["async-mutex", "async-rwlock", "cached_proc_macro", "cached_proc_m
 async = ["futures", "async-trait"]
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-instant = "0.1"
+instant = {version="0.1" , features = [ "wasm-bindgen" ]}
 
 [dependencies.hashbrown]
 version = "0.11.2"
