@@ -1,6 +1,11 @@
 use super::{Cached, SizedCache};
 use std::cmp::Eq;
 use std::hash::Hash;
+
+#[cfg(target_arch = "wasm32")]
+use instant::Instant;
+
+#[cfg(not(target_arch = "wasm32"))]
 use std::time::Instant;
 
 #[cfg(feature = "async")]

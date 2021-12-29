@@ -19,6 +19,9 @@ default = ["proc_macro", "async"]
 proc_macro = ["async-mutex", "async-rwlock", "cached_proc_macro", "cached_proc_macro_types"]
 async = ["futures", "async-trait"]
 
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+instant = "0.1"
+
 [dependencies.hashbrown]
 version = "0.11.2"
 default-features = false
